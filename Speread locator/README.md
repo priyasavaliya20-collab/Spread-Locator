@@ -66,8 +66,8 @@ To apply statistical distribution concepts and inferential statistics techniques
 ## 📗 Part A — Theoretical Foundation (11 Topics)
 
 ## Q1. What is Statistical Distributions?
- 
- <img src="images/Q1.png" width="850" src="https://github.com/user-attachments/assets/98589a90-c47f-4ec8-a2dd-0ebaa369c4fa" />
+
+ <img src="images/Q1.png" width="850">
 
 ## Q2. What is a Q-Q Plot and why is it used?
 
