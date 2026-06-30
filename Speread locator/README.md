@@ -37,7 +37,7 @@ To apply statistical distribution concepts and inferential statistics techniques
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-red?style=flat-square)
 
 ```
-pip install pandas numpy scipy matplotlib openpyxl
+
 ```
 
 ---
