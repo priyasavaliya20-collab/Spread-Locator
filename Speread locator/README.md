@@ -16,7 +16,8 @@ The project combines statistical theory with practical implementation in Python 
 
 To apply statistical distribution concepts and inferential statistics techniques on a real healthcare dataset and derive **evidence-based, data-driven insights** using Python.
 
-<img width="600" height="582" alt="Spread Locator Project Explained - visual selection" src="https://github.com/user-attachments/assets/bff70b1b-e631-4882-9ad1-0d0477923967" />
+<img width="1673" height="940" alt="ChatGPT Image Jun 30, 2026, 04_25_01 PM" src="https://github.com/user-attachments/assets/ea1d3e94-7cc2-48ad-897b-2b2b21cd4b42" />
+
 
 ---
 
