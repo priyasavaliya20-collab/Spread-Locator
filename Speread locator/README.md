@@ -47,6 +47,20 @@ To apply statistical distribution concepts and inferential statistics techniques
 
 ---
 
+### 🎬 PART :- A (GIF)
+
+
+<img width="800" height="425" alt="Part - A GIF" src="https://github.com/user-attachments/assets/8fa7c520-c4d6-42e1-a16a-72e8369dc46c" />
+
+
+
+### 🎬 PART :- B (GIF)
+
+
+
+---
+
+
 ## 📗 Part A — Theoretical Foundation (11 Topics)
 
 ## Q1. What is Statistical Distributions?
