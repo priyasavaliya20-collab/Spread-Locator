@@ -2,6 +2,11 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Spread%20Locator&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=35&desc=A%20Statistical%20Distribution%20Analysis%20Model%20Data&descAlignY=58&descSize=18" />
 </div>
 
+
+This project is a comprehensive Theory + Practical Statistics Analysis developed to demonstrate the application of Inferential Statistics and Hypothesis Testing on a real-world healthcare dataset containing 500 patient records. It combines strong statistical concepts with practical implementation using Python, enabling data-driven decision-making through rigorous statistical analysis.
+
+The project covers the complete workflow—from understanding the theoretical foundations of statistical distributions and hypothesis testing to performing real-world data analysis, interpreting statistical results, and presenting meaningful insights through visualizations.
+
 ---
 
 ## 🎯 Objective
@@ -38,19 +43,6 @@ pip install pandas numpy scipy matplotlib openpyxl
 
 ## 📗 Part A — Theoretical Foundation (11 Topics)
 
-| # | Topic | Key Concept |
-|---|-------|-------------|
-| Q1 | Statistical Distribution | How values spread across a range |
-| Q2 | Q-Q Plot | Fastest visual normality check |
-| Q3 | Discrete vs Continuous | PMF vs PDF, bars vs smooth curve |
-| Q4 | Bernoulli Distribution | Single trial, 2 outcomes — P(X=k) = pᵏ(1−p)¹⁻ᵏ |
-| Q5 | Binomial Distribution | n trials, count successes — C(n,k)·pᵏ·(1−p)ⁿ⁻ᵏ |
-| Q6 | Log-Normal Distribution | ln(X) ~ Normal; always positive, right-skewed |
-| Q7 | Power Law Distribution | Heavy tail; P(x) ∝ x⁻ᵅ; Pareto 80-20 rule |
-| Q8 | Box-Cox Transformation | Skewed → Normal using optimal λ via MLE |
-| Q9 | Poisson Distribution | Events in fixed time/space — (e⁻λ · λᵏ) / k! |
-| Q10 | Z-Score Probability | Standardize raw values — Z = (X−μ)/σ |
-| Q11 | PDF vs CDF | Density vs cumulative probability functions |
 
 ---
 
