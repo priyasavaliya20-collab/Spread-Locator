@@ -323,14 +323,13 @@ spread_locator.ipynb
 
 ## ✅ Project Checklist
 
-- [x] Statistical Distribution Theory (11 Topics)
-- [x] Hypothesis Testing
-- [x] Confidence Intervals
-- [x] Critical Values & p-value Analysis
-- [x] Independent Sample t-Test
-- [x] Chi-Square Test
-- [x] ANOVA
-- [x] Correlation & Covariance Analysis
+- [x] Bernoulli & Binomial Distribution Fitting
+- [x] Poisson Distribution Fitting
+- [x] Log-Normal & Power Law Modeling
+- [x] Q-Q Plot for Normality Testing
+- [x] Box-Cox Transform
+- [x] Z-Score & Tail Probability Analysis
+- [x] PDF & CDF Visualization
 - [x] Statistical Interpretations & Conclusions
 - [x] Dataset Included (500 records)
 - [x] Jupyter Notebook Included
