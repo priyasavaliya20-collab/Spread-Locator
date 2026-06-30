@@ -105,7 +105,7 @@ To apply statistical distribution concepts and inferential statistics techniques
 
 ---
 
-## 📗 Part B — Data Analysis & Hypothesis Testing
+## 📗 Part B —Data Analysis & Testing Tasks:
 
 ### Dataset Overview
 
@@ -146,6 +146,7 @@ plt.show()
 **✅ Conclusion:** Transaction occurrence follows **Bernoulli**, weekly count follows **Binomial**.
 
 **📊 Distribution:** Bernoulli p (success rate) = **0.4455** (~44.5% success). Weekly count: mean ≈ **2.85**, max = 9 → Binomial(n≈9-10, p≈0.30) shape.
+
 ---
 
 ## 2️⃣ Poisson Distribution
@@ -167,7 +168,9 @@ plt.show()
 **✅ Conclusion:** Daily transaction counts follow a **Poisson distribution**.
 
 **📊 Distribution:** λ (lambda) ≈ **7.1** transactions/day (mean ≈ variance, consistent with Poisson).
+
 ---
+
 ## 3️⃣ Log-Normal & Power Law Modeling
 **Objective:** Model transaction amounts using Log-Normal and Power Law distributions.
 
@@ -239,6 +242,7 @@ plt.show()
 **✅ Conclusion:** Box-Cox confirms that a **log transform** is the correct stabilizing transform.
 
 **📊 Distribution:** Lambda (λ) ≈ **-0.18**, close to 0 → mathematically equivalent to a log transform, reinforcing the Log-Normal conclusion.
+
 ---
 
 ## 6️⃣ Z-Scores & Tail Probability
@@ -257,6 +261,7 @@ print("Probability of transactions exceeding ₹5000:", probability)
 **✅ Conclusion:** The original Z-score/Normal-based probability **understates the real risk** on this skewed data.
 
 **📊 Distribution:** Normal-based P(amount > ₹5000) = **20.5%**; correct Log-Normal-based P = **13.8%** → a gap of **6.7 points**.
+
 ---
 
 ## 7️⃣ PDF & CDF Plots
