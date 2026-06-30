@@ -2,6 +2,7 @@
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Spread%20Locator&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=35&desc=A%20Statistical%20Distribution%20Analysis%20Model%20Data&descAlignY=58&descSize=18" />
 </div>
 
+---
 
 This project is a comprehensive Theory + Practical Statistics Analysis developed to demonstrate the application of Inferential Statistics and Hypothesis Testing on a real-world healthcare dataset containing 500 patient records. It combines strong statistical concepts with practical implementation using Python, enabling data-driven decision-making through rigorous statistical analysis.
 
