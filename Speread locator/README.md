@@ -36,9 +36,7 @@ To apply statistical distribution concepts and inferential statistics techniques
 ![SciPy](https://img.shields.io/badge/SciPy-Statistics-purple?style=flat-square)
 ![Matplotlib](https://img.shields.io/badge/Matplotlib-Visualization-red?style=flat-square)
 
-```
 
-```
 ---
 
 # 🎬 Project Demo
