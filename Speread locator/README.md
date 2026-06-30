@@ -39,6 +39,13 @@ To apply statistical distribution concepts and inferential statistics techniques
 ```
 
 ```
+---
+
+# 🎬 Project Demo
+
+[![Watch Demo](https://img.shields.io/badge/▶️%20Watch%20Demo-Google%20Drive-blue?style=for-the-badge&logo=google-drive)](https://drive.google.com/file/d/175YZyLfHg1AR_5acjJPqHpOEaXNAhdzz/view?usp=sharing)
+
+📹 Click the badge above to watch the complete project demonstration.
 
 ---
 
@@ -104,180 +111,172 @@ To apply statistical distribution concepts and inferential statistics techniques
 
 ### Dataset Overview
 
+## 📚 Import Libraries
+
 ```python
 import pandas as pd
-df = pd.read_excel("spread_locator_dataset.xlsx")
-print(df.shape)        # (500, n_columns)
-print(df.describe())   # Basic stats
-```
-
----
-
-### 🔬 Q1 — Hypothesis Testing (Chi-Square)
-
-**Research Question:** Does smoking status influence diabetes prevalence?
-
-| Hypothesis | Statement |
-|------------|-----------|
-| H₀ | Smoking has no effect on diabetes prevalence |
-| H₁ | Smoking affects diabetes prevalence |
-
-```python
-from scipy.stats import chi2_contingency
-
-table = pd.crosstab(df["Smoking_Status"], df["Diabetes"])
-chi2_stat, p_value, dof, expected = chi2_contingency(table)
-
-print(f"Chi-Square = {chi2_stat:.3f}")
-print(f"P-Value    = {p_value:.3f}")
-```
-
-| Metric | Value |
-|--------|-------|
-| Chi-Square Statistic | 0.609 |
-| p-value | 0.610 |
-| Critical Value | 2.623 |
-
-**✅ Conclusion:** p-value (0.610) >> 0.05 → **Fail to Reject H₀**  
-Smoking status and diabetes prevalence are **statistically independent**.
-
----
-
-### 📊 Q2 — Confidence Interval Analysis
-
-**Formula:** CI = x̄ ± Z × (σ / √n)
-
-```python
 import numpy as np
-
-def confidence_interval(col, z=1.96):
-    mean = col.mean()
-    margin = z * (col.std() / np.sqrt(len(col)))
-    return round(mean - margin, 2), round(mean + margin, 2)
-
-print("Age CI   :", confidence_interval(df["Age"]))
-print("Weight CI:", confidence_interval(df["Weight"]))
-print("BP CI    :", confidence_interval(df["Blood_Pressure"]))
+from scipy.stats import bernoulli, binom
+import matplotlib.pyplot as plt
+import seaborn as sns
 ```
 
-| Variable | 95% Confidence Interval |
-|----------|------------------------|
-| Age | 41.09 – 44.26 |
-| Weight | 75.80 – 79.21 |
-| Blood Pressure | 135.63 – 140.06 |
+## 📂 Loaded Dataset
 
-**✅ Conclusion:** Population estimates are reliable and precise.
+```python
+df = pd.read_excel("spread_locator_dataset.xlsx")
+```
 
 ---
 
-### 📈 Q3 — Critical Value & p-value Decision Rule
+## 1️⃣ Bernoulli & Binomial Distributions
+**Objective:** Fit the data to Bernoulli and Binomial distributions (transaction occurrence & weekly count).
 
 ```python
-alpha = 0.05
+# Bernoulli: Success = 1, Fail = 0
+df["transaction_occurrence"] = df["transaction_status"].map({"Success": 1, "Fail": 0})
+sns.countplot(x=df["transaction_occurrence"])
+plt.title("Bernoulli Distribution - Transaction Occurrence")
+plt.show()
 
-def decision(p_val):
-    return "Reject H₀ ✗" if p_val < alpha else "Fail to Reject H₀ ✓"
+# Binomial: weekly transaction counts
+sns.histplot(df["transaction_count"], bins=10)
+plt.title("Binomial Distribution - Weekly Transaction Counts")
+plt.show()
 ```
 
-| Decision Rule | Condition |
-|---------------|-----------|
-| Reject H₀ | p-value < 0.05 |
-| Fail to Reject H₀ | p-value ≥ 0.05 |
+**✅ Conclusion:** Transaction occurrence follows **Bernoulli**, weekly count follows **Binomial**.
 
-**✅ Conclusion:** Both critical value and p-value approaches give **consistent decisions**.
+**📊 Distribution:** Bernoulli p (success rate) = **0.4455** (~44.5% success). Weekly count: mean ≈ **2.85**, max = 9 → Binomial(n≈9-10, p≈0.30) shape.
+---
+
+## 2️⃣ Poisson Distribution
+**Objective:** Fit the data to a Poisson distribution (number of transactions per day).
+
+```python
+df["transaction_date"] = pd.to_datetime(df["transaction_date"])
+daily_transactions = df.groupby("transaction_date").size()
+lam = daily_transactions.mean()
+
+x = np.arange(daily_transactions.min(), daily_transactions.max()+1)
+plt.hist(daily_transactions, bins=8, density=True, alpha=0.7, label="Observed")
+plt.plot(x, poisson.pmf(x, lam), 'ro-', label="Poisson Fit")
+plt.title("Poisson Distribution Fit")
+plt.legend()
+plt.show()
+```
+
+**✅ Conclusion:** Daily transaction counts follow a **Poisson distribution**.
+
+**📊 Distribution:** λ (lambda) ≈ **7.1** transactions/day (mean ≈ variance, consistent with Poisson).
+---
+## 3️⃣ Log-Normal & Power Law Modeling
+**Objective:** Model transaction amounts using Log-Normal and Power Law distributions.
+
+```python
+from scipy.stats import lognorm, powerlaw
+
+amount = df["transaction_amount"]
+amount = amount[amount > 0]
+x = np.linspace(amount.min(), amount.max(), 500)
+
+# Log-Normal fit
+ln_shape, ln_loc, ln_scale = lognorm.fit(amount, floc=0)
+plt.hist(amount, bins=20, density=True, alpha=0.7)
+plt.plot(x, lognorm.pdf(x, ln_shape, ln_loc, ln_scale), 'r', label="Log-Normal")
+plt.title("Log-Normal Distribution"); plt.legend(); plt.show()
+
+# Power Law fit
+pl_shape, pl_loc, pl_scale = powerlaw.fit(amount)
+plt.hist(amount, bins=20, density=True, alpha=0.7)
+plt.plot(x, powerlaw.pdf(x, pl_shape, pl_loc, pl_scale), 'darkred', label="Power Law")
+plt.title("Power Law Distribution"); plt.legend(); plt.show()
+```
+
+**✅ Conclusion:** **Log-Normal is the best-fit distribution** for transaction amount — confirmed statistically (not just visually).
+
+**📊 Distribution (AIC & KS test, n=220):**
+
+| Distribution | AIC (lower=better) | KS p-value |
+|---|---|---|
+| **Log-Normal** | **3823.0** | **0.900** ✅ |
+| Gamma | 3846.3 | 0.299 |
+| Normal | 3968.6 | 0.0003 ❌ |
+| Exponential | 4017.3 | <0.001 ❌ |
+| Power Law | 4254.6 | <0.001 ❌ |
+
 
 ---
 
-### 👨‍⚕️ Q4 — Independent Sample t-Test
-
-**Objective:** Compare BMI between male and female patients.
-
-**Formula:** t = (x̄₁ − x̄₂) / √(s₁²/n₁ + s₂²/n₂)
+## 4️⃣ Q-Q Plot for Normality
+**Objective:** Generate and interpret a Q-Q Plot to test normality.
 
 ```python
-from scipy.stats import ttest_ind
-
-male   = df[df["Gender"] == "Male"]["BMI"]
-female = df[df["Gender"] == "Female"]["BMI"]
-
-t_stat, p = ttest_ind(male, female)
-print(f"t-value = {t_stat:.3f}")
-print(f"p-value = {p:.3f}")
+import statsmodels.api as sm
+amount = df["transaction_amount"].dropna()
+sm.qqplot(amount, line='45')
+plt.title("Q-Q Plot of Transaction Amount")
+plt.show()
 ```
 
-| Metric | Value |
-|--------|-------|
-| t-value | 1.287 |
-| p-value | 0.199 |
-| Critical Value | 1.28 |
+**✅ Conclusion:** Transaction amount is **NOT normally distributed**.
 
-**✅ Conclusion:** p = 0.199 > 0.05 → Male and female BMI are **statistically similar**.
+**📊 Distribution:** The Q-Q plot shows clear upward bowing at the upper tail versus the 45° line → a right-skew signature, not normal.
 
 ---
 
-### 🔗 Q5 — Chi-Square Test (Smoking vs Diabetes)
-
-**Formula:** χ² = Σ (O − E)² / E
+## 5️⃣ Box-Cox Transform
+**Objective:** Apply a Box-Cox transform to stabilize variance.
 
 ```python
-table = pd.crosstab(df["Smoking_Status"], df["Diabetes"])
-chi2, p, dof, _ = chi2_contingency(table)
-print(f"Chi-Square = {chi2:.3f}, p = {p:.3f}")
+from scipy.stats import boxcox
+amount = df["transaction_amount"].dropna()
+transformed_data, lam = boxcox(amount)
+print("Lambda value:", lam)
+plt.hist(transformed_data, bins=20)
+plt.title("Box-Cox Transformed Data")
+plt.show()
 ```
 
-| Metric | Value |
-|--------|-------|
-| Chi-Square | 2.131 |
-| p-value | 0.345 |
+**✅ Conclusion:** Box-Cox confirms that a **log transform** is the correct stabilizing transform.
 
-**✅ Conclusion:** No significant association between smoking status and diabetes.
-
+**📊 Distribution:** Lambda (λ) ≈ **-0.18**, close to 0 → mathematically equivalent to a log transform, reinforcing the Log-Normal conclusion.
 ---
 
-### 📊 Q6 — ANOVA Test
-
-**Objective:** Compare BMI across exercise frequency groups (Daily / Weekly / Rarely / Never).
-
-**Formula:** F = Between-Group Variance / Within-Group Variance
+## 6️⃣ Z-Scores & Tail Probability
+**Objective:** Calculate Z-scores for transaction amounts and compute the probability of transactions exceeding ₹5000.
 
 ```python
-from scipy.stats import f_oneway
+from scipy.stats import zscore, norm
+amount = df["transaction_amount"].dropna()
+df["Z_score"] = zscore(amount)
 
-groups = [df[df["Exercise_Frequency"] == g]["BMI"] for g in ["Daily","Weekly","Rarely","Never"]]
-F, p = f_oneway(*groups)
-print(f"F-value = {F:.3f}, p-value = {p:.3f}")
+z = (5000 - amount.mean()) / amount.std()
+probability = 1 - norm.cdf(z)
+print("Probability of transactions exceeding ₹5000:", probability)
 ```
 
-| Metric | Value |
-|--------|-------|
-| F-value | 1.072 |
-| p-value | 0.370 |
-| Critical Value | 2.38 |
+**✅ Conclusion:** The original Z-score/Normal-based probability **understates the real risk** on this skewed data.
 
-**✅ Conclusion:** Exercise frequency does **not** significantly affect BMI.
-
+**📊 Distribution:** Normal-based P(amount > ₹5000) = **20.5%**; correct Log-Normal-based P = **13.8%** → a gap of **6.7 points**.
 ---
 
-### 📈 Q7 — Correlation & Covariance Analysis
-
-**Objective:** Analyze relationship between Age and BMI.
-
-**Formula:** r = Cov(X,Y) / (σₓ · σᵧ)
+## 7️⃣ PDF & CDF Plots
+**Objective:** Plot and interpret the PDF and CDF for transaction amounts.
 
 ```python
-correlation = df["Age"].corr(df["BMI"])
-covariance  = df["Age"].cov(df["BMI"])
+from scipy.stats import norm
+amount = df["transaction_amount"].dropna()
+mean, std = amount.mean(), amount.std()
 
-print(f"Correlation (r) = {correlation:.3f}")
-print(f"Covariance      = {covariance:.3f}")
+x = np.linspace(amount.min(), amount.max(), 100)
+plt.plot(x, norm.pdf(x, mean, std)); plt.title("PDF of Transaction Amount"); plt.show()
+plt.plot(x, norm.cdf(x, mean, std)); plt.title("CDF of Transaction Amount"); plt.show()
 ```
 
-| Metric | Value |
-|--------|-------|
-| Correlation (r) | 0.032 |
-| Relationship | Very Weak Positive |
+**✅ Conclusion:** The Normal PDF/CDF visually mismatches the actual right-skewed data shape (and technically allows impossible negative amounts).
 
-**✅ Conclusion:** Age and BMI are **not meaningfully correlated** (r ≈ 0 → only ~1% variance explained).
+**📊 Distribution:** The correct PDF/CDF should use Log-Normal parameters (shape ≈ 0.475, scale ≈ 2983).
 
 ---
 
@@ -296,10 +295,11 @@ print(f"Covariance      = {covariance:.3f}")
 
 ## 🎯 Final Conclusion
 
-> This project successfully applied **Inferential Statistics** and **Hypothesis Testing** to a 500-record healthcare dataset.  
-> Statistical analyses confirmed that smoking status, exercise frequency, and gender do not significantly affect the health metrics studied.  
-> Age showed only a very weak relationship with BMI.  
-> **Inferential statistics transformed raw healthcare data into actionable, evidence-based insights.**
+Statistical distribution analysis (Bernoulli, Binomial, Poisson, Log-Normal, Power Law, Q-Q plot, Box-Cox, Z-score, PDF/CDF) was applied on a 220-record transaction dataset to convert raw transaction data into evidence-based insights using Python.
+
+Results showed transaction occurrence follows a Bernoulli process (~44.5% success rate) with weekly counts following Binomial, daily volume following Poisson (λ≈7.1), and transaction amount best fitting a Log-Normal distribution — confirmed by AIC/KS test, Q-Q plot, and Box-Cox (λ≈-0.18).
+
+Since the data is right-skewed, Normal-based assumptions understate real risk (20.5% vs true 13.8% probability of exceeding ₹5000) and overstate typical transaction size. **Log-Normal-based metrics give a more reliable, risk-aware basis for forecasting and fraud detection.**
 
 ---
 
