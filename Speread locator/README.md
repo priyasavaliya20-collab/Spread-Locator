@@ -1,5 +1,5 @@
 <div align="center">
-  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Spread%20Locator&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=35&desc= A Statistical%20Analysis%20and%20Hypothesis%20Testing%20on%20Healthcare%20Data&descAlignY=58&descSize=18" />
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Spread%20Locator&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=35&desc=Statistical%20Analysis%20and%20Hypothesis%20Testing%20on%20Healthcare%20Data&descAlignY=58&descSize=18" />
 </div>
 
 ---
