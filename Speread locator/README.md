@@ -4,9 +4,9 @@
 
 ---
 
-This project is a comprehensive Theory + Practical Statistics Analysis developed to demonstrate the application of Inferential Statistics and Hypothesis Testing on a real-world healthcare dataset containing 500 patient records. It combines strong statistical concepts with practical implementation using Python, enabling data-driven decision-making through rigorous statistical analysis.
+This project presents a comprehensive Theory + Practical Statistics Analysis on a real-world transaction dataset containing 500 records. The objective is to apply Inferential Statistics and Hypothesis Testing techniques to analyze transactional patterns, evaluate statistical relationships, and derive meaningful business insights from the data.
 
-The project covers the complete workflow—from understanding the theoretical foundations of statistical distributions and hypothesis testing to performing real-world data analysis, interpreting statistical results, and presenting meaningful insights through visualizations.
+The project combines statistical theory with practical implementation in Python (Jupyter Notebook), covering the complete analytical workflow from data preprocessing and exploratory data analysis (EDA) to hypothesis testing, visualization, and interpretation of results.
 
 ---
 
@@ -21,7 +21,7 @@ To apply statistical distribution concepts and inferential statistics techniques
 | File | Description |
 |------|-------------|
 | 📓 `spread_locator.ipynb` | Complete statistical analysis notebook (Part B) |
-| 📊 `spread_locator_dataset.xlsx` | Healthcare dataset — 500 patient records |
+| 📊 `spread_locator_dataset.xlsx` | transaction dataset — containing 500 records|
 | 📄 `Part_A_Theory.pdf` | Theoretical foundations, formulas & visual explanations |
 | 📘 `README.md` | Project documentation (this file) |
 
@@ -230,15 +230,15 @@ print(f"Covariance      = {covariance:.3f}")
 
 ## 📊 Key Findings Summary
 
-| Test | Variables Tested | Result |
-|------|-----------------|--------|
-| Chi-Square | Smoking ↔ Diabetes | No significant association |
-| t-Test | Male BMI vs Female BMI | Statistically similar |
-| ANOVA | BMI across Exercise Groups | No significant difference |
-| ANOVA | Diabetes across Age Groups | No significant difference |
-| Correlation | Age vs BMI | Very weak (r = 0.032) |
-| Confidence Interval | Age, Weight, BP | Reliable estimates |
-
+* Successfully analyzed 500 real-world transaction records using inferential statistical techniques.
+* Identified meaningful patterns and trends across transaction amounts, customer activity, regions, and transaction status.
+* Applied multiple hypothesis testing methods to determine statistically significant relationships between variables.
+* Evaluated group differences using Independent Sample t-Test and One-Way ANOVA.
+* Examined associations between categorical variables using the Chi-Square Test of Independence.
+* Measured the strength and direction of relationships through Correlation and Covariance Analysis.
+* Estimated population parameters using Confidence Intervals and interpreted results based on p-values and critical values.
+* Created clear visualizations to support statistical findings and improve data interpretation.
+* Demonstrated a complete end-to-end statistical analysis workflow, from data preprocessing to evidence-based conclusions using Python.
 ---
 
 ## 🎯 Final Conclusion
