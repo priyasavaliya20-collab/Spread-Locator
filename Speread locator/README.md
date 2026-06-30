@@ -1,3 +1,5 @@
+<img width="800" height="425" alt="Part - B GIF" src="https://github.com/user-attachments/assets/11d62e24-bc16-445d-bb4a-188754bca4fc" />
+<img width="800" height="425" alt="Part - B GIF" src="https://github.com/user-attachments/assets/d8486586-7616-4f6f-ae64-81bc010f636b" />
 <img width="800" height="425" alt="Part - B GIF" src="https://github.com/user-attachments/assets/c807a386-4410-4627-97b1-3fd926d0d795" />
 <img width="800" height="425" alt="Part - B GIF" src="https://github.com/user-attachments/assets/86c0a7f4-6113-4cdc-9610-86a69c8a32a0" />
 <div align="center">
@@ -58,6 +60,7 @@ To apply statistical distribution concepts and inferential statistics techniques
 
 ### 🎬 PART :- B (GIF)
 
+<img width="800" height="425" alt="Part - B GIF" src="https://github.com/user-attachments/assets/0c1f915f-4c9f-4532-a62d-2649b91883a4" />
 
 
 ---
