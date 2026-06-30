@@ -72,53 +72,53 @@ To apply statistical distribution concepts and inferential statistics techniques
 
 ## Q2. What is a Q-Q Plot and why is it used?
 
-<img width="1642" height="577" alt="Q2" src="https://github.com/user-attachments/assets/53b901ca-31c3-4f25-a7bc-74d2a7e756f6" />
+<img width="900px" height="300px" alt="Q2" src="https://github.com/user-attachments/assets/53b901ca-31c3-4f25-a7bc-74d2a7e756f6" />
 
 
 ## Q3. Difference between Discrete and Continuous Distributions.
 
-<img width="1638" height="582" alt="Q3" src="https://github.com/user-attachments/assets/9befb63d-27ea-43f1-b6e0-64ba6757e8b2" />
+<img width="800px" height="350px" alt="Q3" src="https://github.com/user-attachments/assets/9befb63d-27ea-43f1-b6e0-64ba6757e8b2" />
 
 
 ## Q4. What is Bernoulli Distribution?
 
-<img width="1493" height="612" alt="Q4" src="https://github.com/user-attachments/assets/0a281323-db84-4645-84bd-d34a9ff95c50" />
+<img width="800px" height="350px" alt="Q4" src="https://github.com/user-attachments/assets/0a281323-db84-4645-84bd-d34a9ff95c50" />
 
 
 ## Q5. What is Binomial Distribution?
 
-<img width="1640" height="622" alt="Q5" src="https://github.com/user-attachments/assets/756ff91a-8818-4fb6-be89-65dfa95c986c" />
+<img width="900px" height="350px" alt="Q5" src="https://github.com/user-attachments/assets/756ff91a-8818-4fb6-be89-65dfa95c986c" />
 
 
 ## Q6. Explain Log-Normal Distribution.
 
-<img width="1642" height="598" alt="Q6" src="https://github.com/user-attachments/assets/3ac28231-0735-4e51-9994-ff95b9a88fe6" />
+<img width="900px" height="300px" alt="Q6" src="https://github.com/user-attachments/assets/3ac28231-0735-4e51-9994-ff95b9a88fe6" />
 
 
 ## Q7. Explain Power Law Distribution.
 
-<img width="1641" height="612" alt="Q7" src="https://github.com/user-attachments/assets/1940d1c0-9b0a-4483-89ed-e8efbe7e8b04" />
+<img width="900px" height="300px" alt="Q7" src="https://github.com/user-attachments/assets/1940d1c0-9b0a-4483-89ed-e8efbe7e8b04" />
 
 
 
 ## Q8. What is Box-Cox Transform?
 
-<img width="1637" height="606" alt="Q8" src="https://github.com/user-attachments/assets/ff6bc748-10f4-4026-be58-35a681d36852" />
+<img width="900px" height="350px" alt="Q8" src="https://github.com/user-attachments/assets/ff6bc748-10f4-4026-be58-35a681d36852" />
 
 
 ## Q9. Explain Poisson Distribution with an example.
 
-<img width="1642" height="613" alt="Q9" src="https://github.com/user-attachments/assets/7d17275a-0668-4a42-b447-d94a735da1ac" />
+<img width="900px" height="350px" alt="Q9" src="https://github.com/user-attachments/assets/7d17275a-0668-4a42-b447-d94a735da1ac" />
 
 
 ## Q10. What is Z-score Probability?
 
-<img width="1633" height="622" alt="Q10" src="https://github.com/user-attachments/assets/1e0865a1-baf9-48ec-9cb0-afba320a0dc5" />
+<img width="900px" height="300px" alt="Q10" src="https://github.com/user-attachments/assets/1e0865a1-baf9-48ec-9cb0-afba320a0dc5" />
 
 
 ## Q11. Differentiate Probability Density Function (PDF) and Cumulative Distribution Function (CDF).
 
-<img width="1642" height="602" alt="Q11" src="https://github.com/user-attachments/assets/523d3647-bb20-414b-92a1-d141a28b14d9" />
+<img width="900px" height="300px" alt="Q11" src="https://github.com/user-attachments/assets/523d3647-bb20-414b-92a1-d141a28b14d9" />
 
 ---
 
