@@ -1,3 +1,5 @@
+<img width="800" height="425" alt="Part - B GIF" src="https://github.com/user-attachments/assets/c807a386-4410-4627-97b1-3fd926d0d795" />
+<img width="800" height="425" alt="Part - B GIF" src="https://github.com/user-attachments/assets/86c0a7f4-6113-4cdc-9610-86a69c8a32a0" />
 <div align="center">
   <img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Spread%20Locator&fontSize=42&fontColor=fff&animation=twinkling&fontAlignY=35&desc=A%20Statistical%20Distribution%20Analysis%20Model%20Data&descAlignY=58&descSize=18" />
 </div>
